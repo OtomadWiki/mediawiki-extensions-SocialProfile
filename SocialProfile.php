@@ -113,7 +113,7 @@ $wgSocialProfileFileBackend = '';
 
 // What to display on social profile pages by default?
 $wgUserProfileDisplay['board'] = true;
-$wgUserProfileDisplay['foes'] = true;
+$wgUserProfileDisplay['foes'] = false;
 $wgUserProfileDisplay['friends'] = true;
 $wgUserProfileDisplay['avatar'] = true; // If set to false, disables both avatar display and upload
 

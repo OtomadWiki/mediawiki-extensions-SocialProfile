@@ -1125,17 +1125,10 @@ class UserProfilePage extends Article {
 			if ( $relationship == false ) {
 				$profileLinks['user-add-friend'] =
 					'<a href="' . htmlspecialchars( $add_friend->getFullURL() ) . '" rel="nofollow">' . wfMessage( 'user-add-friend' )->escaped() . '</a>';
-
-				$profileLinks['user-add-foe'] =
-					'<a href="' . htmlspecialchars( $add_foe->getFullURL() ) . '" rel="nofollow">' . wfMessage( 'user-add-foe' )->escaped() . '</a>';
 			} else {
 				if ( $relationship == 1 ) {
 					$profileLinks['user-remove-friend'] =
 						'<a href="' . htmlspecialchars( $remove_relationship->getFullURL() ) . '">' . wfMessage( 'user-remove-friend' )->escaped() . '</a>';
-				}
-				if ( $relationship == 2 ) {
-					$profileLinks['user-remove-foe'] =
-						'<a href="' . htmlspecialchars( $remove_relationship->getFullURL() ) . '">' . wfMessage( 'user-remove-foe' )->escaped() . '</a>';
 				}
 			}
 
@@ -1220,14 +1213,8 @@ class UserProfilePage extends Article {
 		$language = $context->getLanguage();
 
 		// If not enabled in site settings, don't display
-		if ( $rel_type == 1 ) {
-			if ( $wgUserProfileDisplay['friends'] == false ) {
-				return '';
-			}
-		} else {
-			if ( $wgUserProfileDisplay['foes'] == false ) {
-				return '';
-			}
+		if ( $wgUserProfileDisplay['friends'] == false ) {
+			return '';
 		}
 
 		$output = ''; // Prevent E_NOTICE
@@ -1254,13 +1241,8 @@ class UserProfilePage extends Article {
 		$stats = new UserStats( $this->profileOwner );
 		$stats_data = $stats->getUserStats();
 
-		if ( $rel_type == 1 ) {
-			$relationship_count = $stats_data['friend_count'];
-			$relationship_title = wfMessage( 'user-friends-title' )->escaped();
-		} else {
-			$relationship_count = $stats_data['foe_count'];
-			$relationship_title = wfMessage( 'user-foes-title' )->escaped();
-		}
+		$relationship_count = $stats_data['friend_count'];
+		$relationship_title = wfMessage( 'user-friends-title' )->escaped();
 
 		if ( count( $friends ) > 0 ) {
 			$x = 1;
@@ -1272,7 +1254,7 @@ class UserProfilePage extends Article {
 					<div class="action-right">';
 			if ( intval( $relationship_count ) > 4 ) {
 				// Use the friendlier URLs here by default (T191157)
-				$rel_type_name = ( $rel_type == 1 ? 'friends' : 'foes' );
+				$rel_type_name = 'friends';
 				$view_all_title = SpecialPage::getTitleFor(
 					'ViewRelationships',
 					$this->profileOwner->getName() . '/' . $rel_type_name

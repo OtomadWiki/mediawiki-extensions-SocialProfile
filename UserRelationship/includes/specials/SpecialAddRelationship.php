@@ -22,7 +22,7 @@ class SpecialAddRelationship extends UnlistedSpecialPage {
 	/**
 	 * @var int 1 for friending, any other number for foeing
 	 */
-	public $relationship_type;
+	public $relationship_type = 1;
 
 	public function __construct() {
 		parent::__construct( 'AddRelationship' );
