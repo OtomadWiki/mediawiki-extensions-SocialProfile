@@ -33,7 +33,7 @@ class SpecialGetAvatar extends FormSpecialPage {
 			$avatar = new wAvatar( -1, $size );
 		}
 		$this->getOutput()->setCdnMaxage( 60 * 60 );
-		$this->getOutput()->redirect( $avatar->getAvatarUrlPath(), 302 );
+		$this->getOutput()->redirect( $avatar->getAvatarUrl(), 302 );
 		return true;
 	}
 
