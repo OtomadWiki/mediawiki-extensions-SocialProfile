@@ -65,6 +65,7 @@ $wgAutoloadClasses['SpecialPopulateUserProfiles'] = __DIR__ . '/UserProfile/incl
 $wgAutoloadClasses['SpecialToggleUserPage'] = __DIR__ . '/UserProfile/includes/specials/SpecialToggleUserPageType.php';
 $wgAutoloadClasses['SpecialUpdateProfile'] = __DIR__ . '/UserProfile/includes/specials/SpecialUpdateProfile.php';
 $wgAutoloadClasses['SpecialUploadAvatar'] = __DIR__ . '/UserProfile/includes/specials/SpecialUploadAvatar.php';
+$wgAutoloadClasses['SpecialGetAvatar'] = __DIR__ . '/UserProfile/includes/specials/SpecialGetAvatar.php';
 $wgAutoloadClasses['UploadAvatar'] = __DIR__ . '/UserProfile/includes/avatar/UploadAvatar.php';
 $wgAutoloadClasses['UploadAvatarFromUrl'] = __DIR__ . '/UserProfile/includes/avatar/UploadAvatarFromUrl.php';
 $wgAutoloadClasses['UploadAvatarTrait'] = __DIR__ . '/UserProfile/includes/avatar/UploadAvatarTrait.php';
@@ -104,6 +105,7 @@ $wgSpecialPages['RemoveAvatar'] = 'RemoveAvatar';
 $wgSpecialPages['ToggleUserPage'] = 'SpecialToggleUserPage';
 $wgSpecialPages['UpdateProfile'] = 'SpecialUpdateProfile';
 $wgSpecialPages['UploadAvatar'] = 'SpecialUploadAvatar';
+$wgSpecialPages['GetAvatar'] = 'SpecialGetAvatar';
 
 // file backend to use defaults to FileSystem
 // this allows you to use e.g. swift.
