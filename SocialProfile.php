@@ -95,6 +95,9 @@ $wgAPIModules['uploadavatar'] = 'ApiUploadAvatar';
 $wgAutoloadClasses['ApiUserProfileType'] = __DIR__ . '/UserProfile/includes/api/ApiUserProfileType.php';
 $wgAPIModules['smpuserprofiletype'] = 'ApiUserProfileType';
 
+$wgAutoloadClasses['ApiUserAvatar'] = __DIR__ . '/UserProfile/includes/api/ApiUserAvatar.php';
+$wgAPIModules['smpavatar'] = 'ApiUserAvatar';
+
 $wgDefaultUserOptions['echo-subscriptions-web-social-rel'] = true;
 $wgDefaultUserOptions['echo-subscriptions-email-social-rel'] = false;
 
