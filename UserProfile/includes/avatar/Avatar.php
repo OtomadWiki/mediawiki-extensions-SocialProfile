@@ -133,6 +133,19 @@ class wAvatar {
 	}
 
 	/**
+	 * Get the web-accessible url for the avatar.
+	 *
+	 * @return string
+	 */
+	public function getAvatarUrlPath(): string {
+		global $wgUploadBaseUrl, $wgUploadPath;
+
+		$uploadPath = $wgUploadBaseUrl ? $wgUploadBaseUrl . $wgUploadPath : $wgUploadPath;
+
+		return "{$uploadPath}/avatars/{$this->getAvatarImage()}";
+	}
+
+	/**
 	 * @param array $extraParams Array of extra parameters to give to the image;
 	 *  if [ 'raw' => true ], returns the raw avatar URL *without* the surrounding <img> tag
 	 * @return string Either the <img> HTML tag with full path to the avatar image

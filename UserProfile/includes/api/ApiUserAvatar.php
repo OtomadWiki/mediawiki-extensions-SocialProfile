@@ -34,7 +34,7 @@ class ApiUserAvatar extends ApiBase {
 			$avatar = new wAvatar( -1, 'l' );
 		}
 
-		$output = $avatar->getAvatarUrl();
+		$output = $avatar->getAvatarUrlPath();
 		$result = $this->getResult();
 		$data = [
 			'url' => $output
